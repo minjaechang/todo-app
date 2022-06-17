@@ -2,9 +2,7 @@
 
 :root {
   /* Color */
-
   --color-bright-blue: hsl(220, 98%, 61%);
-  /* --color-check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%); */
 
   /* Light Theme */
 
@@ -108,7 +106,7 @@ button {
 
 .check-icon {
   display: inline-block;
-  background-color: blue;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   width: 1.5rem;
   height: 1.5rem;
   line-height: 1.7rem;
