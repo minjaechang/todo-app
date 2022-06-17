@@ -78,7 +78,7 @@ button {
 }
 
 .input {
-  padding: 1rem;
+  padding: 1.2rem;
   display: block;
   width: 100%;
   border: none;
@@ -139,10 +139,31 @@ button {
   background: white;
   color: var(--color-dark-grayish-blue);
   font-size: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .clear-btn {
   font-size: 0.8rem;
+  color: var(--color-dark-grayish-blue);
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 0.3rem;
+}
+
+.filter button {
+  color: var(--color-dark-grayish-blue);
+  font-weight: var(--weight-bold);
+  font-size: 0.9rem;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
   color: var(--color-dark-grayish-blue);
 }
