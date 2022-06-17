@@ -1,5 +1,40 @@
+/* Global */
+
+:root {
+  /* Color */
+
+  --color-bright-blue: hsl(220, 98%, 61%);
+  /* --color-check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%); */
+
+  /* Light Theme */
+
+  --color-very-light-gray: hsl(0, 0%, 98%);
+  --color-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --color-light-grayish-bluet: hsl(233, 11%, 84%);
+  --color-dark-grayish-blue: hsl(236, 9%, 61%);
+  --color-very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+
+  --color-very-dark-blue-dark: hsl(235, 21%, 11%);
+  --color-very-dark-desaturated-blue-dark: hsl(235, 24%, 19%);
+  --color-light-grayish-blue-dark: hsl(234, 39%, 85%);
+  --color-light-grayish-blue-hover-dark: hsl(236, 33%, 92%);
+  --color-dark-grayish-blue-dark: hsl(234, 11%, 52%);
+  --color-very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
+  --color-very-dark-grayish-blue-dark: hsl(237, 14%, 26%);
+
+  /* Font size */
+  --font-medium: 18px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-regular: 400;
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
@@ -22,19 +57,62 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .form {
   margin-top: 1rem;
-  /* height: 1.5rem; */
 }
 
 .input {
-  /* font-size: 1.4rem; */
   padding: 1rem;
-  width: 90vw;
+  width: 86vw;
   display: block;
   margin: 0 auto;
+  border: none;
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.list {
+  width: 86vw;
+  list-style: none;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0;
+  background-color: white;
+  border-radius: 0.3rem;
+}
+
+.todo {
+  display: grid;
+  grid-template-columns: 2.2rem auto;
+  padding: 1.2rem;
+  border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.check-icon {
+  display: inline-block;
+  background-color: blue;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.7rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.check-icon img {
+  width: 0.8rem;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
 }
