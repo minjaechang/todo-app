@@ -54,7 +54,7 @@ button {
 .container {
   width: 100%;
   position: absolute;
-  top: 2rem;
+  top: 1.8rem;
 }
 
 .header {
@@ -63,12 +63,14 @@ button {
   align-items: center;
   margin-left: 2rem;
   margin-right: 2rem;
+  font-size: 1.3rem;
   color: white;
 }
 
 .content {
   width: 86vw;
   margin: auto;
+  color: var(--color-very-dark-grayish-blue);
 }
 
 .form {
@@ -161,7 +163,7 @@ button {
 
 .footer {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   margin-bottom: 4rem;
   color: var(--color-dark-grayish-blue);
 }
