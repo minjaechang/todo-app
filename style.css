@@ -10,7 +10,7 @@
 
   --color-very-light-gray: hsl(0, 0%, 98%);
   --color-very-light-grayish-blue: hsl(236, 33%, 92%);
-  --color-light-grayish-bluet: hsl(233, 11%, 84%);
+  --color-light-grayish-blue: hsl(233, 11%, 84%);
   --color-dark-grayish-blue: hsl(236, 9%, 61%);
   --color-very-dark-grayish-blue: hsl(235, 19%, 35%);
 
@@ -41,6 +41,12 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  background-color: var(--color-very-light-grayish-blue);
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 .bg-img {
@@ -59,6 +65,12 @@ body {
   align-items: center;
   margin-left: 2rem;
   margin-right: 2rem;
+  color: white;
+}
+
+.content {
+  width: 86vw;
+  margin: auto;
 }
 
 .form {
@@ -67,9 +79,8 @@ body {
 
 .input {
   padding: 1rem;
-  width: 86vw;
   display: block;
-  margin: 0 auto;
+  width: 100%;
   border: none;
   border-radius: 0.3rem;
   outline: 0;
@@ -80,7 +91,6 @@ body {
 }
 
 .list {
-  width: 86vw;
   list-style: none;
   margin: auto;
   margin-top: 1rem;
@@ -115,4 +125,24 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
+}
+
+.cross-icon {
+  height: 0.8rem;
+}
+
+.additional {
+  display: flex;
+  border-radius: 0 0 0.3rem 0.3rem;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background: white;
+  color: var(--color-dark-grayish-blue);
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.clear-btn {
+  font-size: 0.8rem;
+  color: var(--color-dark-grayish-blue);
 }
