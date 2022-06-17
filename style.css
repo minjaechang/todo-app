@@ -155,10 +155,14 @@ button {
   border-radius: 0.3rem;
 }
 
-.filter button {
+.filter-item {
   color: var(--color-dark-grayish-blue);
   font-weight: var(--weight-bold);
   font-size: 0.9rem;
+}
+
+.filter-item.active {
+  color: var(--color-bright-blue);
 }
 
 .footer {
