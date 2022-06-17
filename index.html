@@ -9,25 +9,29 @@
     <title>Todo App</title>
   </head>
   <body>
-    <img src="./images/bg-mobile-dark.jpg" alt="" />
-    <h1>TODO</h1>
-    <img src="./images/icon-sun.svg" alt="sun icon" />
-    <form>
-      <input type="text" placeholder="Create a new todo" />
-    </form>
-    <ul>
-      <li>Complete online JavaScript course</li>
-      <li>Jog around the par 3x</li>
-    </ul>
-    <div>
-      <span>5 items left</span>
-      <button>Clear Completed</button>
+    <img class="bg-img" src="./images/bg-mobile-light.jpg" alt="" />
+    <div class="container">
+      <section class="header">
+        <h1 class="title">TODO</h1>
+        <img src="./images/icon-moon.svg" alt="sun icon" />
+      </section>
+      <form class="form">
+        <input type="text" placeholder="Create a new todo" />
+      </form>
+      <ul class="list">
+        <li>Complete online JavaScript course</li>
+        <li>Jog around the par 3x</li>
+      </ul>
+      <div>
+        <span>5 items left</span>
+        <button>Clear Completed</button>
+      </div>
+      <div>
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
+      <p>Drag and drop to reorder list</p>
     </div>
-    <div>
-      <button>All</button>
-      <button>Active</button>
-      <button>Completed</button>
-    </div>
-    <p>Drag and drop to reorder list</p>
   </body>
 </html>
