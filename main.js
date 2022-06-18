@@ -12,12 +12,16 @@ function onAdd() {
   const item = document.createElement('li');
 
   item.setAttribute('class', 'todo-item');
-  item.innerHTML = `<div class="complete-btn active">
-  <img class="check-icon" src="./images/icon-check.svg" alt="check icon" />
+  item.innerHTML = `<div class="todo-check">
+  <div class="complete-btn active">
+    <img
+      class="check-icon"
+      src="./images/icon-check.svg"
+      alt="check icon"
+    />
+  </div>
+  <span class="todo-description">${text}</span>
 </div>
-<span class="todo-description"
-  >${text}</span
->
 <div class="delete-btn">
   <img
     class="cross-icon"

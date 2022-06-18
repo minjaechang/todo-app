@@ -105,47 +105,51 @@ button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.2rem;
+  padding: 1rem;
   border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.todo-check {
+  display: flex;
+  align-items: center;
+  line-height: 1.7em;
 }
 
 .complete-btn {
   display: inline-block;
   width: 1.3rem;
   height: 1.3rem;
-  line-height: 1.7em;
+  /* line-height: 1.7em; */
   border-radius: 50%;
   border: 1px solid var(--color-light-grayish-blue);
   text-align: center;
 }
 
 .complete-btn.active {
-  display: inline-block;
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  width: 1.3rem;
-  height: 1.3rem;
-  line-height: 1.7em;
-  border-radius: 50%;
   border: none;
-  text-align: center;
 }
 
 .check-icon {
   width: 0.8rem;
+  height: 0.8rem;
 }
 
 .todo-description {
   font-size: 0.9rem;
+  margin: 0;
+  margin-left: 0.4rem;
 }
 
 .delete-btn {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.3rem;
+  height: 1.3rem;
   line-height: 1.7rem;
   display: inline-block;
 }
 
 .cross-icon {
+  width: 0.8rem;
   height: 0.8rem;
 }
 
