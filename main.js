@@ -59,9 +59,9 @@ todoList.addEventListener('click', (e) => {
 });
 
 filter.addEventListener('click', (e) => {
-  // const filterName = e.target.innerText;
+  const filterName = e.target.innerText;
 
-  e.target.classList.toggle('active');
+  // e.target.classList.toggle('active');
   const todos = todoList.childNodes;
 
   if (filterName === 'Completed') {
