@@ -13,7 +13,7 @@ function onAdd() {
 
   item.setAttribute('class', 'todo-item');
   item.innerHTML = `<div class="todo-check">
-  <div class="complete-btn active">
+  <div class="complete-btn">
     <img
       class="check-icon"
       src="./images/icon-check.svg"
@@ -46,5 +46,12 @@ todoList.addEventListener('click', (e) => {
   // Delete todo-item when clicking the button
   if (item.classList.contains('delete-btn')) {
     item.parentElement.remove();
+  }
+
+  // Toggle the complete button
+  if (item.classList.contains('complete-btn')) {
+    item.classList.toggle('active');
+    const todo = item.parentElement.parentElement;
+    todo.classList.toggle('complete');
   }
 });

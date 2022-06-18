@@ -109,6 +109,11 @@ button {
   border-bottom: 1px solid rgb(237, 237, 237);
 }
 
+.todo-item.complete {
+  text-decoration: line-through;
+  color: var(--color-dark-grayish-blue);
+}
+
 .todo-check {
   display: flex;
   align-items: center;
@@ -119,7 +124,6 @@ button {
   display: inline-block;
   width: 1.3rem;
   height: 1.3rem;
-  /* line-height: 1.7em; */
   border-radius: 50%;
   border: 1px solid var(--color-light-grayish-blue);
   text-align: center;
@@ -137,8 +141,8 @@ button {
 
 .todo-description {
   font-size: 0.9rem;
-  margin: 0;
   margin-left: 0.4rem;
+  margin-top: 0.25rem;
 }
 
 .delete-btn {
@@ -146,6 +150,7 @@ button {
   height: 1.3rem;
   line-height: 1.7rem;
   display: inline-block;
+  cursor: pointer;
 }
 
 .cross-icon {
