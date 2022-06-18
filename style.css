@@ -163,17 +163,6 @@ button {
   pointer-events: none;
 }
 
-.additional {
-  display: flex;
-  border-radius: 0 0 0.3rem 0.3rem;
-  justify-content: space-between;
-  padding: 1.2rem;
-  background: white;
-  color: var(--color-dark-grayish-blue);
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
-
 .clear-btn {
   font-size: 0.8rem;
   color: var(--color-dark-grayish-blue);
@@ -185,21 +174,23 @@ button {
   background-color: white;
   padding: 1.2rem;
   border-radius: 0.3rem;
+  margin-top: 1rem;
 }
 
 .filter-item {
   color: var(--color-dark-grayish-blue);
   font-weight: var(--weight-bold);
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .filter-item.active {
   color: var(--color-bright-blue);
 }
 
-.footer {
+/* .footer {
   text-align: center;
   margin-top: 2.5rem;
   margin-bottom: 4rem;
   color: var(--color-dark-grayish-blue);
-}
+} */
