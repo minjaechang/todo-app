@@ -49,6 +49,7 @@ button {
 
 .bg-img {
   width: 100%;
+  height: 14rem;
 }
 
 .container {
@@ -90,7 +91,7 @@ button {
   outline: none;
 }
 
-.list {
+.todo-list {
   list-style: none;
   margin: auto;
   margin-top: 1rem;
@@ -99,47 +100,58 @@ button {
   border-radius: 0.3rem;
 }
 
-.todo {
-  display: grid;
-  grid-template-columns: 2.2rem auto;
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 1.2rem;
   border-bottom: 1px solid rgb(237, 237, 237);
 }
 
-.check-icon {
+.complete-btn {
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  line-height: 1.7rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  line-height: 1.7em;
   border-radius: 50%;
   border: 1px solid var(--color-light-grayish-blue);
   text-align: center;
 }
 
-.check-icon.active {
+.complete-btn.active {
   display: inline-block;
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  width: 1.5rem;
-  height: 1.5rem;
-  line-height: 1.7rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  line-height: 1.7em;
   border-radius: 50%;
   border: none;
   text-align: center;
 }
 
-.check-icon img {
+.check-icon {
   width: 0.8rem;
 }
 
-.description {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.todo-description {
   font-size: 0.9rem;
+}
+
+.delete-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.7rem;
+  display: inline-block;
 }
 
 .cross-icon {
   height: 0.8rem;
+}
+
+.check-icon,
+.cross-icon {
+  pointer-events: none;
 }
 
 .additional {

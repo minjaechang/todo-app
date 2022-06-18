@@ -1,32 +1,46 @@
 'use strict';
 
 const form = document.querySelector('form');
-const list = document.querySelector('.list');
+const todoList = document.querySelector('.todo-list');
 const input = document.querySelector('.input');
+const deleteBtn = document.querySelector('.cross-icon');
+const checkIcon = document.querySelector('.check-icon');
+const todoItem = document.querySelector('.todo-item');
 
 function onAdd() {
   const text = input.value;
-  //   console.log(text);
   const item = document.createElement('li');
-  item.setAttribute('class', 'todo');
-  item.innerHTML = `<div class="check-icon">
-  <img src="./images/icon-check.svg" alt="check icon" />
+
+  item.setAttribute('class', 'todo-item');
+  item.innerHTML = `<div class="complete-btn active">
+  <img class="check-icon" src="./images/icon-check.svg" alt="check icon" />
 </div>
-<div class="description">
-  <span>${text}</span>
+<span class="todo-description"
+  >${text}</span
+>
+<div class="delete-btn">
   <img
     class="cross-icon"
     src="./images/icon-cross.svg"
     alt="cross icon"
   />
 </div>`;
-  console.log(item);
-  list.appendChild(item);
+
+  todoList.appendChild(item);
 }
 
+// Add input to the list
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  console.log('Hello World!');
   onAdd();
   e.target.reset();
+});
+
+todoList.addEventListener('click', (e) => {
+  const item = e.target;
+
+  // Delete todo-item when clicking the button
+  if (item.classList.contains('delete-btn')) {
+    item.parentElement.remove();
+  }
 });
