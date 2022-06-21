@@ -129,7 +129,7 @@ button {
   text-align: center;
 }
 
-.complete-btn.active {
+.complete-btn.completed {
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border: none;
 }

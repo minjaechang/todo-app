@@ -21,7 +21,7 @@ form.addEventListener('submit', (event) => {
 
   todoItem.innerHTML = `
   <div class="todo-check">
-  <div class="complete-btn">
+  <div class="complete-btn" data-id=${id}>
     <img
       class="check-icon"
       src="./images/icon-check.svg"
@@ -46,8 +46,25 @@ form.addEventListener('submit', (event) => {
 
 todoList.addEventListener('click', (e) => {
   const id = e.target.dataset.id;
-  if (id && e.target.classList.contains('delete-btn')) {
-    const item = document.querySelector(`.todo-item[data-id="${id}"]`);
+  if (id == null) {
+    return;
+  }
+  const item = document.querySelector(`.todo-item[data-id="${id}"]`);
+
+  // Delete todo item when clicking the delete-btn
+  if (e.target.classList.contains('delete-btn')) {
     item.remove();
+  }
+
+  // Make todo item active when clicking the circles
+  if (e.target.classList.contains('complete-btn')) {
+    e.target.classList.toggle('completed');
+
+    // Change data-type depending on the check icon status
+    if (item.dataset.type === 'active') {
+      item.dataset.type = 'completed';
+    } else {
+      item.dataset.type = 'active';
+    }
   }
 });
