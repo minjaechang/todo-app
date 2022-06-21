@@ -59,6 +59,7 @@ todoList.addEventListener('click', (e) => {
   // Make todo item active when clicking the circles
   if (e.target.classList.contains('complete-btn')) {
     e.target.classList.toggle('completed');
+    item.classList.add('complete');
 
     // Change data-type depending on the check icon status
     if (item.dataset.type === 'active') {
@@ -79,6 +80,7 @@ filterContainer.addEventListener('click', (e) => {
     return;
   }
 
+  // Make filter button active
   filterItems.forEach((item) => {
     if (item !== e.target) {
       item.classList.remove('active');
@@ -86,6 +88,7 @@ filterContainer.addEventListener('click', (e) => {
     e.target.classList.add('active');
   });
 
+  // Make items filtered by selection
   const items = document.querySelectorAll('.todo-item');
   items.forEach((item) => {
     if (filter === '*' || filter === item.dataset.type) {
