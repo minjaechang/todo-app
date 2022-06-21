@@ -114,6 +114,10 @@ button {
   color: var(--color-dark-grayish-blue);
 }
 
+.todo-item.invisible {
+  display: none;
+}
+
 .todo-check {
   display: flex;
   align-items: center;

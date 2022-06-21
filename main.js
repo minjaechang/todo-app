@@ -68,3 +68,30 @@ todoList.addEventListener('click', (e) => {
     }
   }
 });
+
+// filter feature
+const filterContainer = document.querySelector('.filter');
+const filterItems = document.querySelectorAll('.filter-item');
+filterContainer.addEventListener('click', (e) => {
+  const filter = e.target.dataset.filter;
+
+  if (filter == null) {
+    return;
+  }
+
+  filterItems.forEach((item) => {
+    if (item !== e.target) {
+      item.classList.remove('active');
+    }
+    e.target.classList.add('active');
+  });
+
+  const items = document.querySelectorAll('.todo-item');
+  items.forEach((item) => {
+    if (filter === '*' || filter === item.dataset.type) {
+      item.classList.remove('invisible');
+    } else {
+      item.classList.add('invisible');
+    }
+  });
+});
