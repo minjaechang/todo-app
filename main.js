@@ -141,7 +141,6 @@ function removeLocalTodos(id) {
 
   const todo = todos.find((todo) => todo.id === parseInt(id));
   const todoIndex = todos.indexOf(todo);
-  console.log(todoIndex);
 
   todos.splice(todoIndex, 1);
 
