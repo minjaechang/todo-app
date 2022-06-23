@@ -26,12 +26,12 @@ todoList.addEventListener('click', (e) => {
   const item = document.querySelector(`.todo-item[data-id="${id}"]`);
 
   // Delete todo item when clicking the delete-btn
-  if (e.target.classList.contains('delete-btn')) {
+  if (e.target.className === 'delete-btn') {
     item.remove();
   }
 
   // Make todo item active when clicking the circles
-  if (e.target.classList.contains('complete-btn')) {
+  if (e.target.className === 'complete-btn') {
     e.target.classList.toggle('completed');
     item.classList.toggle('complete');
 
