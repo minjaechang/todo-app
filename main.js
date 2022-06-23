@@ -5,7 +5,6 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 const todoList = document.querySelector('.todo-list');
 
-let id = 1;
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -13,6 +12,8 @@ form.addEventListener('submit', (event) => {
   if (text == '') {
     return;
   }
+
+  const id = Date.now();
 
   const todoItem = document.createElement('li');
   todoItem.setAttribute('class', 'todo-item');
@@ -37,8 +38,6 @@ form.addEventListener('submit', (event) => {
     alt="cross icon"
   />
 </div>`;
-
-  id++;
 
   todoList.appendChild(todoItem);
   input.value = '';
