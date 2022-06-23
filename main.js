@@ -31,6 +31,7 @@ todoList.addEventListener('click', (e) => {
 
   // Delete todo item when clicking the delete-btn
   if (e.target.className === 'delete-btn') {
+    removeLocalTodos(id);
     item.remove();
   }
 
@@ -128,4 +129,21 @@ function getTodos(todos) {
   todos.forEach((todo) => {
     createTodo(todo.id, todo.text);
   });
+}
+
+function removeLocalTodos(id) {
+  let todos;
+  if (localStorage.getItem('todos') == null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  const todo = todos.find((todo) => todo.id === parseInt(id));
+  const todoIndex = todos.indexOf(todo);
+  console.log(todoIndex);
+
+  todos.splice(todoIndex, 1);
+
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
