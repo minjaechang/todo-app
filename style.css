@@ -49,6 +49,7 @@ button {
 .container {
   margin: auto;
   padding: 1rem;
+  width: 95vw;
 }
 
 .header {
@@ -92,7 +93,7 @@ button {
   padding: 0;
   background-color: white;
   border-radius: 0.3rem;
-  height: 33rem;
+  height: 60vh;
   overflow-y: auto;
 }
 
@@ -195,7 +196,7 @@ button {
   color: var(--color-dark-grayish-blue);
 } */
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 45rem) {
   .container {
     max-width: 60rem;
   }
