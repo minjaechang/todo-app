@@ -36,7 +36,7 @@ todoList.addEventListener('click', (e) => {
   }
 
   // Make todo item active when clicking the circles
-  if (e.target.className === 'complete-btn') {
+  if (e.target.classList.contains('complete-btn')) {
     e.target.classList.toggle('completed');
     item.classList.toggle('complete');
 
