@@ -13,33 +13,8 @@ form.addEventListener('submit', (event) => {
     return;
   }
 
-  const id = Date.now();
+  createTodo(text);
 
-  const todoItem = document.createElement('li');
-  todoItem.setAttribute('class', 'todo-item');
-  todoItem.setAttribute('data-type', 'active');
-  todoItem.setAttribute('data-id', id);
-
-  todoItem.innerHTML = `
-  <div class="todo-check">
-  <div class="complete-btn" data-id=${id}>
-    <img
-      class="check-icon"
-      src="./images/icon-check.svg"
-      alt="check icon"
-    />
-  </div>
-  <span class="todo-description">${text}</span>
-</div>
-<div class="delete-btn" data-id=${id}>
-  <img
-    class="cross-icon"
-    src="./images/icon-cross.svg"
-    alt="cross icon"
-  />
-</div>`;
-
-  todoList.appendChild(todoItem);
   input.value = '';
 });
 
@@ -97,3 +72,33 @@ filterContainer.addEventListener('click', (e) => {
     }
   });
 });
+
+function createTodo(text) {
+  const id = Date.now();
+
+  const todoItem = document.createElement('li');
+  todoItem.setAttribute('class', 'todo-item');
+  todoItem.setAttribute('data-type', 'active');
+  todoItem.setAttribute('data-id', id);
+
+  todoItem.innerHTML = `
+  <div class="todo-check">
+  <div class="complete-btn" data-id=${id}>
+    <img
+      class="check-icon"
+      src="./images/icon-check.svg"
+      alt="check icon"
+    />
+  </div>
+  <span class="todo-description">${text}</span>
+</div>
+<div class="delete-btn" data-id=${id}>
+  <img
+    class="cross-icon"
+    src="./images/icon-cross.svg"
+    alt="cross icon"
+  />
+</div>`;
+
+  todoList.appendChild(todoItem);
+}
