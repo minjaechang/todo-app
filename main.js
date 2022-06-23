@@ -101,4 +101,18 @@ function createTodo(text) {
 </div>`;
 
   todoList.appendChild(todoItem);
+  saveLocalTodos(id, text);
+}
+
+function saveLocalTodos(id, text) {
+  let todos;
+  if (localStorage.getItem('todos') == null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  const todo = { id, text };
+  todos.push(todo);
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
