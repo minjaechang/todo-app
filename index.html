@@ -21,7 +21,11 @@
       </section>
       <section class="content">
         <form class="form">
-          <input class="input" type="text" placeholder="Create a new todo" />
+          <input
+            class="input"
+            type="text"
+            placeholder="Click here to create a new todo"
+          />
         </form>
         <div class="filter">
           <button class="filter-item active" data-filter="*">All</button>
@@ -31,18 +35,16 @@
         <ul class="todo-list">
           <li class="todo-item" data-type="active" data-id="0">
             <div class="todo-check">
-              <div class="complete-btn" data-id="${id}">
+              <div class="complete-btn" data-id="0">
                 <img
                   class="check-icon"
                   src="./images/icon-check.svg"
                   alt="check icon"
                 />
               </div>
-              <span class="todo-description"
-                >Add some todos to the list :)</span
-              >
+              <span class="todo-description">Feed my cat</span>
             </div>
-            <div class="delete-btn" data-id="${id}">
+            <div class="delete-btn" data-id="0">
               <img
                 class="cross-icon"
                 src="./images/icon-cross.svg"

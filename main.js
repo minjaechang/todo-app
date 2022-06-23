@@ -59,7 +59,7 @@ todoList.addEventListener('click', (e) => {
   // Make todo item active when clicking the circles
   if (e.target.classList.contains('complete-btn')) {
     e.target.classList.toggle('completed');
-    item.classList.add('complete');
+    item.classList.toggle('complete');
 
     // Change data-type depending on the check icon status
     if (item.dataset.type === 'active') {
