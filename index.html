@@ -15,11 +15,9 @@
     <title>Todo App</title>
   </head>
   <body>
-    <img class="bg-img" src="./images/bg-mobile-light.jpg" alt="" />
     <div class="container">
       <section class="header">
         <h1 class="title">T O D O</h1>
-        <img src="./images/icon-moon.svg" alt="sun icon" />
       </section>
       <section class="content">
         <form class="form">
@@ -30,8 +28,31 @@
           <button class="filter-item" data-filter="active">Active</button>
           <button class="filter-item" data-filter="completed">Completed</button>
         </div>
-        <ul class="todo-list"></ul>
+        <ul class="todo-list">
+          <li class="todo-item" data-type="active" data-id="0">
+            <div class="todo-check">
+              <div class="complete-btn" data-id="${id}">
+                <img
+                  class="check-icon"
+                  src="./images/icon-check.svg"
+                  alt="check icon"
+                />
+              </div>
+              <span class="todo-description"
+                >Add some todos to the list :)</span
+              >
+            </div>
+            <div class="delete-btn" data-id="${id}">
+              <img
+                class="cross-icon"
+                src="./images/icon-cross.svg"
+                alt="cross icon"
+              />
+            </div>
+          </li>
+        </ul>
       </section>
+      <!-- TODO: Make the list able to reorder -->
       <!-- <section class="footer">
         <p>Drag and drop to reorder list</p>
       </section> -->

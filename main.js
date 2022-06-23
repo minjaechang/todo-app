@@ -5,7 +5,7 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 const todoList = document.querySelector('.todo-list');
 
-let id = 0;
+let id = 1;
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
