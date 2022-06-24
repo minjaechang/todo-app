@@ -97,7 +97,6 @@ button {
   padding: 1rem;
   border-bottom: 1px solid rgb(237, 237, 237);
   border-radius: 0.3rem;
-  font-size: 0.8rem;
 }
 
 .todo-item.complete {
@@ -144,6 +143,7 @@ button {
 .todo-description {
   margin-left: 0.4rem;
   margin-top: 0.25rem;
+  font-size: 0.8rem;
 }
 
 .delete-btn {
