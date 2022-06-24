@@ -199,5 +199,22 @@ button {
 @media screen and (min-width: 45rem) {
   .container {
     max-width: 60rem;
+    margin-top: 3rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+  }
+
+  .filter-item {
+    font-size: 0.9rem;
+  }
+
+  .todo-description {
+    font-size: 0.9rem;
   }
 }
