@@ -5,20 +5,17 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 const todoList = document.querySelector('.todo-list');
 
-document.addEventListener('DOMContentLoaded', getTodos);
+document.addEventListener('DOMContentLoaded', getTodos());
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-
-  const text = input.value;
-  if (text == '') {
+  const todo = input.value;
+  if (todo == '') {
     return;
   }
-
   const id = Date.now();
-  createTodo(id, text);
-  saveLocalTodos(id, text);
-
+  createTodo(id, description);
+  saveTodo(id, description);
   input.value = '';
 });
 
@@ -78,7 +75,7 @@ filterContainer.addEventListener('click', (e) => {
   });
 });
 
-function createTodo(id, text) {
+function createTodo(id, description) {
   const todoItem = document.createElement('li');
   todoItem.setAttribute('class', 'todo-item');
   todoItem.setAttribute('data-type', 'active');
@@ -93,7 +90,7 @@ function createTodo(id, text) {
       alt="check icon"
     />
   </div>
-  <span class="todo-description">${text}</span>
+  <span class="todo-description">${description}</span>
 </div>
 <div class="delete-btn" data-id=${id}>
   <img
@@ -106,43 +103,38 @@ function createTodo(id, text) {
   todoList.appendChild(todoItem);
 }
 
-function saveLocalTodos(id, text) {
-  let todos;
-  if (localStorage.getItem('todos') == null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
-
-  const todo = { id, text };
-  todos.push(todo);
-  localStorage.setItem('todos', JSON.stringify(todos));
-}
-
-function getTodos(todos) {
-  if (localStorage.getItem('todos') == null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
-
-  todos.forEach((todo) => {
-    createTodo(todo.id, todo.text);
+async function saveTodo(id, title) {
+  await fetch('http://localhost:3000/todos', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      id,
+      title,
+    }),
   });
 }
 
-function removeLocalTodos(id) {
-  let todos;
-  if (localStorage.getItem('todos') == null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
+async function getTodos() {
+  const response = await fetch('http://localhost:3000/todos', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-  const todo = todos.find((todo) => todo.id === parseInt(id));
-  const todoIndex = todos.indexOf(todo);
+  const todos = await response.json();
+  todos.forEach((todo) => {
+    return createTodo(todo.id, todo.description);
+  });
+}
 
-  todos.splice(todoIndex, 1);
-
-  localStorage.setItem('todos', JSON.stringify(todos));
+async function removeLocalTodos(id) {
+  await fetch(`http://localhost:3000/todos/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Conent-Type': 'application/json',
+    },
+  });
 }
