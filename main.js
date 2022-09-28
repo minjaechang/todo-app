@@ -5,22 +5,23 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 const todoList = document.querySelector('.todo-list');
 
-document.addEventListener('DOMContentLoaded', getTodos());
+document.addEventListener('DOMContentLoaded', getTodos);
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const todo = input.value;
-  if (todo == '') {
+  const description = input.value;
+  if (description == '') {
     return;
   }
   const id = Date.now();
   createTodo(id, description);
   saveTodo(id, description);
   input.value = '';
+  input.focus();
 });
 
 todoList.addEventListener('click', (e) => {
-  const id = e.target.dataset.id;
+  const id = parseInt(e.target.dataset.id);
   if (id == null) {
     return;
   }
@@ -28,7 +29,7 @@ todoList.addEventListener('click', (e) => {
 
   // Delete todo item when clicking the delete-btn
   if (e.target.className === 'delete-btn') {
-    removeLocalTodos(id);
+    removeTodo(id);
     item.remove();
   }
 
@@ -75,7 +76,7 @@ filterContainer.addEventListener('click', (e) => {
   });
 });
 
-function createTodo(id, description) {
+async function createTodo(id, description) {
   const todoItem = document.createElement('li');
   todoItem.setAttribute('class', 'todo-item');
   todoItem.setAttribute('data-type', 'active');
@@ -103,38 +104,44 @@ function createTodo(id, description) {
   todoList.appendChild(todoItem);
 }
 
-async function saveTodo(id, title) {
-  await fetch('http://localhost:3000/todos', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      id,
-      title,
-    }),
-  });
+async function saveTodo(id, description) {
+  const todos = localStorage.getItem('todos');
+  if (todos) {
+    const todoObject = JSON.parse(todos);
+    localStorage.setItem(
+      'todos',
+      JSON.stringify({
+        todos: [{ id, description, isCompleted: false }, ...todoObject.todos],
+      })
+    );
+  } else {
+    localStorage.setItem(
+      'todos',
+      JSON.stringify({ todos: [{ id, description, isCompleted: false }] })
+    );
+  }
 }
 
 async function getTodos() {
-  const response = await fetch('http://localhost:3000/todos', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  const todos = await response.json();
-  todos.forEach((todo) => {
-    return createTodo(todo.id, todo.description);
+  const todoObj = await JSON.parse(localStorage.getItem('todos'));
+  if (!todoObj) {
+    return;
+  }
+  return todoObj.todos.forEach((todo) => {
+    createTodo(todo.id, todo.description);
   });
 }
 
-async function removeLocalTodos(id) {
-  await fetch(`http://localhost:3000/todos/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Conent-Type': 'application/json',
-    },
+async function removeTodo(id) {
+  const todoObj = await JSON.parse(localStorage.getItem('todos'));
+
+  if (!todoObj) {
+    return;
+  }
+
+  const newTodos = todoObj.todos.filter((todo) => {
+    return todo.id !== id;
   });
+
+  localStorage.setItem('todos', JSON.stringify({ todos: newTodos }));
 }
